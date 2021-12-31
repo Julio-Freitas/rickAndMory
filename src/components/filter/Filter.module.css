@@ -1,0 +1,111 @@
+.filter {
+    max-width: 120px;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 30px auto;
+    position: relative;
+}
+
+.filter .svg {
+    background: url("../../../public/svg/filter.svg") no-repeat center;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.filter .filter-optGroup {
+    display: inline-flex;
+    flex-direction: column;
+    background: #000000;
+    box-shadow: -1px 1px 0px #76ed44;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: -2px 2px 2px #76ed44;
+    gap: 0;
+    margin: 0;
+    padding: 10px 8px;
+    position: absolute;
+    top: 23px;
+    z-index: 200;
+    visibility: hidden;
+    animation: sliderUp 0.5s forwards;
+}
+
+.filter .filter-optGroup span:first-child {
+    margin-top: 0;
+}
+
+.filter.active .filter-optGroup {
+    animation: sliderDown 0.5s forwards;
+}
+
+.filter .filter-optGroup span {
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    color: #fff;
+}
+
+.filter .filter-optGroup span::after {
+    content: " ";
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+}
+
+.filter .filter-optGroup span.active-clicked {
+    color: #fff;
+    background-color: #76ed44;
+}
+
+.filter .filter-optGroup span.filter-alien::after {
+    background: url("../../../public/svg/alienXhuman.svg") no-repeat center;
+    background-position-y: 0px;
+}
+.filter .filter-optGroup span.filter-human::after {
+    background: url("../../../public/svg/alienXhuman.svg") no-repeat center;
+    background-position-y: -17px;
+}
+
+.filter .filter-optGroup span:hover {
+    background-color: #76ed44;
+    border-radius: 3px;
+    transition: all 0.5s;
+    font-weight: bold;
+    color: #001;
+}
+
+@keyframes sliderDown {
+    from {
+        transform: translate3d(0, -30px, 0);
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0px, 0);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes sliderUp {
+    from {
+        transform: translate3d(0, 0px, 0);
+        visibility: visible;
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(0, -30px, 0);
+        visibility: hidden;
+        opacity: 0;
+    }
+}

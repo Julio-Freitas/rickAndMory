@@ -1,0 +1,21 @@
+.container-loading {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    background: #00000094;
+}
+
+.loading {
+    position: relative;
+    max-width: 100%;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.loading img {
+    display: none;
+}

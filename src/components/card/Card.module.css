@@ -1,0 +1,123 @@
+.container-card {
+    display: flex;
+    gap: 16px;
+    width: 220px;
+    max-width: 220px;
+    height: 220px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
+        rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    background: rgb(60, 62, 68);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-card:hover {
+    box-shadow: #fff -1px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    animation: cardAnimation 0.5s forwards ease-in;
+}
+
+.wrapper-image {
+    position: relative;
+    flex: 2 1 250px;
+    max-width: 250px;
+}
+
+.wrapper-image p {
+    transition: all 0.5s;
+    color: #fff;
+    position: absolute;
+    background: #2121218a;
+    padding: 5px;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+}
+
+.wrapper-image:hover p {
+    visibility: visible;
+}
+
+.without-image {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    position: relative;
+}
+
+.without-image:before {
+    content: " ";
+    position: absolute;
+    left: calc(50% - 25px);
+    top: calc(50% - 50px);
+    width: 50px;
+    height: 50px;
+    background-color: #212121;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.without-image:after {
+    position: absolute;
+    content: " ";
+    left: calc(50% - 50px);
+    top: 50%;
+    width: 100px;
+    height: 50px;
+    background-color: #212121;
+    display: inline-block;
+    border-radius: 20px 20px 0 0;
+}
+
+.wrapper-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding-top: 5px;
+    justify-content: space-around;
+}
+
+.wrapper-detatils h3 {
+    color: #ff1;
+}
+
+.wrapper-detatils p {
+    color: rgb(245, 245, 245);
+}
+
+.status {
+    display: flex;
+    align-items: center;
+}
+
+.status::before {
+    content: " ";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+.status.alive::before {
+    background: rgb(85, 204, 68);
+}
+
+.status.dead::before {
+    background: red;
+}
+
+.status.noStatus::before {
+    background: yellow;
+}
+
+@keyframes cardAnimation {
+    0% {
+        transform: rotate3d(1, 1, 1, -3deg);
+    }
+    100% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+}

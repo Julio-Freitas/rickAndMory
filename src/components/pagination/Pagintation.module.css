@@ -1,0 +1,110 @@
+.wrapper-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.pagination-container {
+  padding: 10px;
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+  max-width: 600px;
+  overflow-y: hidden;
+}
+
+.pagination-container li {
+  padding: 1px 5px;
+  transition: all 0.5s;
+}
+
+.pagination-container li:hover {
+  background: #fff;
+  color: #212121;
+  border-radius: 3;
+}
+
+.prev,
+.next,
+.show-more {
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.prev span,
+.next span {
+  margin: 0 5px;
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 1px 5px;
+}
+
+.prev span:hover {
+  background: #fff;
+  color: #212121;
+  border-radius: 3;
+}
+
+.prev .singleArrow::before,
+.next .singleArrow::before {
+  content: '<<';
+  display: inline-block;
+}
+
+.prev .doubleArrow::before,
+.next .doubleArrow::before {
+  content: '<';
+  display: inline-block;
+}
+
+.next span {
+  transform: rotate(180deg);
+}
+
+.show-more {
+  color: #277ae1;
+  background-color: #fff;
+  border: 1px solid #277ae1;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.show-more:hover {
+  background: #277ae1;
+  color: #fff;
+  position: relative;
+  border: 0;
+}
+
+.show-more:hover::before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-color: #fff;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  animation: identifier 0.5s forwards;
+}
+
+@keyframes identifier {
+  10% {
+    top: 0;
+    width: 0;
+    height: 0;
+  }
+  50% {
+    top: 0%;
+    width: 100%;
+  }
+}
